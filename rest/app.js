@@ -9,26 +9,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-var GreenCoin = contract(greenscore_artifacts);
+var greenCoinAbi = require("../build/contracts/GreenScore.json");
 
 var router = express.Router();
 
-router.get('/', function(req, res) {
+function getScore(hotelId) {
     var Web3 = require('web3');
 	  web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-	  console.log('Getting GreenScore for address 0x1684e9b36a5C6AE95Ce3f454D9124dB2c76d06E9 .....');
 	  var addr = ('0x1684e9b36a5C6AE95Ce3f454D9124dB2c76d06E9');
+    var contractAddr = ('0x8cdaf0cd259887258bc13a92c0a6da92698644c0');
+	  console.log('Getting GreenScore for address ' + addr + ' .....');
 	  console.log('Address:', addr);
-    GreenCoin.deployed().then(function(i) {
-        i.getScore(addr).then(
-            function(f) {
-                $("#msg").html("Hotel Score: " + f);
-                $("#msg").show();
-                console.log(f)
-            }
-        )
-    });
-});
+
+    var greenCoinContract = web3.eth.contract(greenCoinAbi.abi).at(contractAddr);
+    console.log("contract loaded");
+    var result = greenCoinContract.getScore.call(addr);
+    return result;
+}
 
 app.use(router);
 
