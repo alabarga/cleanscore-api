@@ -13,20 +13,22 @@ ENV DOBACKUP="true" \
 @include("git")
 @include("service")
 
-COPY config.tmpl /usr/local/src/${IMAGE}-config.tmpl
-ADD ssl/ /etc/ssl/private/
-
-RUN mkdir -p /etc/${IMAGE} && \
+RUN ${APTGET_INSTALL} -y node-gyp && \
+    ${APTGET_CLEANUP} && \
+    mkdir -p /etc/${IMAGE} && \
     ln -s /backup/${IMAGE}/log /var/log/${IMAGE} && \
-    mkdir /opt && cd /opt && \
-    git clone https://github.com/hackatrips2018-team13/cleanscore-api.git && \
+    cd /opt && \
+    git clone https://github.com/hackatrips2018-team13/cleanscore-api.git work && \
+    rm -rf cleanscore-api && \
+    mv work cleanscore-api && \
     npm -g install ganache-cli && \
     npm -g install truffle && \
     cd cleanscore-api && \
     npm install && \
-    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api.git && \
-
-VOLUME [ /backup/${IMAGE}/db, /backup/${IMAGE}/log ]
+    truffle compile && \
+    cd rest && \
+    npm install && \
+    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api
 
 EXPOSE 3000
 

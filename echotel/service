@@ -1,4 +1,7 @@
 #!/bin/bash
 
 cd /opt/cleanscore-api
+ganache-cli &
+sleep 10
+cd /opt/cleanscore-api/rest
 node app.js

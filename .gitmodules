@@ -1,3 +1,6 @@
 [submodule ".set-square"]
 	path = .set-square
 	url = https://github.com/rydnr/set-square
+[submodule ".set-square-phusion-images"]
+	path = .set-square-phusion-images
+	url = https://github.com/rydnr/set-square-phusion-images.git
