@@ -2,3 +2,5 @@ node_modules/
 build/
 */.#*
 rest/node_modules/
+.build.inc.sh
+npm-debug.log
