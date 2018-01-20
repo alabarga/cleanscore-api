@@ -3,13 +3,13 @@ var express = require("express"),
     bodyParser  = require("body-parser"),
     methodOverride = require("method-override"),
     contract = require("truffle-contract"),
-    greencoin_artifacts = require("../../build/contracts/GreenCoin.json");
+    greenscore_artifacts = require("../build/contracts/GreenScore.json");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-var GreenCoin = contract(greencoin_artifacts);
+var GreenCoin = contract(greenscore_artifacts);
 
 var router = express.Router();
 
