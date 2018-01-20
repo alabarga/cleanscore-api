@@ -1,5 +1,5 @@
 {
-  "name": "cleancoin",
+  "name": "greenscore",
   "version": "1.0.0",
   "description": "",
   "main": "truffle-config.js",
@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hackatrips2018-team13/cleancoin.git"
+    "url": "git+https://github.com/hackatrips2018-team13/greenscore.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hackatrips2018-team13/cleancoin/issues"
+    "url": "https://github.com/hackatrips2018-team13/greenscore/issues"
   },
-  "homepage": "https://github.com/hackatrips2018-team13/cleancoin#readme"
+  "homepage": "https://github.com/hackatrips2018-team13/greenscore#readme"
 }
