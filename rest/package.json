@@ -6,6 +6,7 @@
     "method-override": "^2.1.2",
     "body-parser": "^1.5.1",
     "web3": "^0.14.0",
-    "truffle": "^4.0.5"
+    "truffle": "^4.0.5",
+    "truffle-contract": "^3.0.2"
   }
 }
