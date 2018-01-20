@@ -27,6 +27,22 @@ function getScore(hotelId) {
     return result;
 }
 
+router.get('/hotels', function(req, res) {
+  var Client = require('node-rest-client').Client;
+  var client = new Client();
+  var url = 'http://sandbox.hotelscombined.com/api/2.0/hotels?destination=place:Madrid&apikey=7B5041D1-29A6-491F-B3E0-57CA5FCD53CA&sessionid=testsession1&rooms=1&adults_1=2&checkin=2018-06-13&checkout=2018-06-14&ResponseOptions=images';
+  var args = {
+    headers: { "User-agent": req.get('User-Agent') }
+  };
+  client.get(url, args,function (data, response) {
+    for(var ele in data['results']) {
+      data['results'][ele].greenScore = getScore(data['results'][ele].id);
+      data['results'][ele].image = data['results'][ele].images['0'].large;
+    }
+    res.send(data['results'])
+  });
+});
+
 app.use(router);
 
 app.listen(3000, function() {
