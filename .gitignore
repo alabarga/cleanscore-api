@@ -4,3 +4,5 @@ build/
 rest/node_modules/
 .build.inc.sh
 npm-debug.log
+echotel/Dockerfile
+echotel/git-files/

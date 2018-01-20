@@ -1,0 +1,35 @@
+@include("preamble")
+FROM ${BASE_IMAGE}:${PARENT_IMAGE_TAG}
+@include("maintainer")
+
+@include("addon-toggles")
+
+ENV DOBACKUP="true" \
+    GOPATH="${SERVICE_USER_HOME}"
+
+@include("service_user")
+@include("nodejs")
+@include("npm")
+@include("git")
+@include("service")
+
+COPY config.tmpl /usr/local/src/${IMAGE}-config.tmpl
+ADD ssl/ /etc/ssl/private/
+
+RUN mkdir -p /etc/${IMAGE} && \
+    ln -s /backup/${IMAGE}/log /var/log/${IMAGE} && \
+    mkdir /opt && cd /opt && \
+    git clone https://github.com/hackatrips2018-team13/cleanscore-api.git && \
+    npm -g install ganache-cli && \
+    npm -g install truffle && \
+    cd cleanscore-api && \
+    npm install && \
+    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api.git && \
+
+VOLUME [ /backup/${IMAGE}/db, /backup/${IMAGE}/log ]
+
+EXPOSE 3000
+
+@include("copy-metadata")
+@include("symlinks")
+@include("instructions")
