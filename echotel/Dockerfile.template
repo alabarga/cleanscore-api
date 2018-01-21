@@ -12,6 +12,8 @@ ENV DOBACKUP="true" \
 @include("npm")
 @include("git")
 @include("service")
+@include("ganache")
+@include("truffle")
 
 RUN ${APTGET_INSTALL} -y node-gyp && \
     ${APTGET_CLEANUP} && \
@@ -21,8 +23,6 @@ RUN ${APTGET_INSTALL} -y node-gyp && \
     git clone https://github.com/hackatrips2018-team13/cleanscore-api.git work && \
     rm -rf cleanscore-api && \
     mv work cleanscore-api && \
-    npm -g install ganache-cli && \
-    npm -g install truffle && \
     cd cleanscore-api && \
     npm install && \
     truffle compile && \

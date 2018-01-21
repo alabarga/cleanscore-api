@@ -15,7 +15,7 @@ var router = express.Router();
 
 function getScore(hotelId) {
     var Web3 = require('web3');
-	  web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+	  web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 	  var addr = ('0x1684e9b36a5C6AE95Ce3f454D9124dB2c76d06E9');
     var contractAddr = ('0x8cdaf0cd259887258bc13a92c0a6da92698644c0');
 	  console.log('Getting GreenScore for address ' + addr + ' .....');
