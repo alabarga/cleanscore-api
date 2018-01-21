@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Aplicacion</title>
+        <meta charset="UTF-8">
+            <link type="text/css" rel="stylesheet" href="css/estilos.css">
+            <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	    <link href="css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="css/bootstrap-theme.css" type="text/css">
+            <link href="css/bootstrap.css" rel="stylesheet">
+            
+
+    </head>
+    <body>
+
+        <div class="bs-example">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                </ol>   
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="images/img3.png" alt="First Slide">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="caja col-lg-4 col-md-5 col-sm-5 col-xs-12" >
+                    <form>
+                        <div class="form-group">
+                        <label class><b>Usuario</b></label>
+                        <input class="form-control" type="text" placeholder="Usuario" name="uname"  id="usuario" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label><b>Contraseña</b></label>
+                        <input class="form-control" type="password" placeholder="Contraseña" name="psw"   id="password" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" checked="checked"> Recuerda la contraseña
+                            </label>
+                        </div>
+                        <input  class="btn btn-success search" type="button" onclick="location.href='valoracion.html'" value="Enviar"/>
+                        <div class="form-group">
+                            <span class="psw">Has olvidado la <a href="#">contraseña?</a></span>
+
+                        </div>
+                    </form>
+                </div>	
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                    <footer>
+                        <br><br>
+                        <p>Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso de cookies. <img src="images/ok.png"><a href="#" title="Crear páginas web"> ver mas</a> </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

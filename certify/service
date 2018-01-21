@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /opt/cleanscore-api
+truffle migrate && cd rest && node app.js
