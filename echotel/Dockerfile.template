@@ -28,8 +28,8 @@ RUN ${APTGET_INSTALL} -y node-gyp && \
     truffle compile && \
     cd rest && \
     npm install && \
-    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api && \
-    mkdir /etc/service/ganache
+    mkdir /etc/service/ganache && \
+    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api
 
 COPY service-ganache /etc/service/ganache/run
 

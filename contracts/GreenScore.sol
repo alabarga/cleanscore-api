@@ -45,4 +45,8 @@ contract GreenScore is StandardToken, Ownable {
   function getScore(string _account) view public returns (uint) {
     return (scores[_account]);
   }
+
+  function setScore(string account, uint value) onlyOwner() public {
+    scores[account] = value;
+  }
 }

@@ -6,3 +6,4 @@ rest/node_modules/
 npm-debug.log
 echotel/Dockerfile
 echotel/git-files/
+echotel/copyright-preamble.txt
