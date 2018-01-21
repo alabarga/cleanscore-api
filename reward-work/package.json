@@ -4,5 +4,9 @@
     "keywords": ["util", "functional", "server", "client", "browser"],
     "author": "Diego",
     "contributors": [],
-    "dependencies": {}
+    "dependencies": {
+    "express": "^4.7.1",
+    "method-override": "^2.1.2",
+        "body-parser": "^1.5.1"
+    }
 }

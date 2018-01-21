@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /opt/certify
-truffle migrate && cd ConsultancyPage && node app.js
+cd /opt/reward/reward-work
+node app.js

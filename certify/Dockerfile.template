@@ -29,7 +29,7 @@ RUN ${APTGET_INSTALL} -y node-gyp && \
     cd ConsultancyPage && \
     npm install && \
     mkdir /etc/service/ganache && \
-    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api
+    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/certify
 
 COPY service-ganache /etc/service/ganache/run
 

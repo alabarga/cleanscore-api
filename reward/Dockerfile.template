@@ -12,30 +12,20 @@ ENV DOBACKUP="true" \
 @include("npm")
 @include("git")
 @include("service")
-@include("ganache")
-@include("truffle")
 
-RUN echo "yes"
+RUN echo "no"
 
 RUN ${APTGET_INSTALL} -y node-gyp && \
     ${APTGET_CLEANUP} && \
     cd /opt && \
     git clone https://github.com/hackatrips2018-team13/cleanscore-api.git work && \
-    rm -rf certify && \
-    mv work certify && \
-    cd /opt/certify && \
+    rm -rf reward && \
+    mv work reward && \
+    cd reward && \
     npm install && \
-    truffle compile && \
-    cd ConsultancyPage && \
-    npm install && \
-    mkdir /etc/service/ganache && \
-    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api
+    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/reward
 
-COPY service-ganache /etc/service/ganache/run
-
-RUN chmod +x /etc/service/ganache/run
-
-EXPOSE 8080
+EXPOSE 8081
 
 @include("copy-metadata")
 @include("symlinks")
