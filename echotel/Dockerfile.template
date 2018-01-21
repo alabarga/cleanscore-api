@@ -28,7 +28,12 @@ RUN ${APTGET_INSTALL} -y node-gyp && \
     truffle compile && \
     cd rest && \
     npm install && \
-    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api
+    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api && \
+    mkdir /etc/service/ganache
+
+COPY service-ganache /etc/service/ganache/run
+
+RUN chmod +x /etc/service/ganache/run
 
 EXPOSE 3000
 
