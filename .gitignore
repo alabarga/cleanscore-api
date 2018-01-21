@@ -9,5 +9,6 @@ echotel/Dockerfile
 echotel/git-files/
 echotel/LICENSE
 node_modules/
+*/node_modules/
 npm-debug.log
 rest/node_modules/

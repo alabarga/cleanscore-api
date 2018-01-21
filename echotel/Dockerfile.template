@@ -15,7 +15,7 @@ ENV DOBACKUP="true" \
 @include("ganache")
 @include("truffle")
 
-RUN echo "yes"
+RUN echo "refreshed"
 
 RUN ${APTGET_INSTALL} -y node-gyp && \
     ${APTGET_CLEANUP} && \
