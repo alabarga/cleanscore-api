@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Green Coin</title>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/estilos.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Auditoría</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h1>Premiar trabajo</h1>
+    <form class="form">
+        <div class="form-group">
+            <label><b>Id Usuario</b></label>
+            <input type="text" placeholder="User Id" class="form-control" name="userId" required="required">
+        </div>
+        <div class="form-group">
+            <label><b>Servicios auditados</b></label>
+            <select name="services" required="required" class="form-control" multiple>
+                <option value="cleanCoast">Limpieza de costas</option>
+                <option value="cleanForest">Limpieza de bosques</option>
+                <option value="ecoLaundry">Reforestación</option>
+                <option value="communityService">Servicios a la comunidad</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><b>Green Coin</b></label>
+            <input type="number" placeholder="Green Coin" class="form-control" name="gc" required="required">
+        </div>
+        <div class="buttons-center">
+            <input class="btn btn-success search" value="Buscar" type="submit"/>
+        </div>
+    </form>
+</div>
+</body>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/app.js"></script>
+</html>

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /opt/certify
+truffle migrate && cd ConsultancyPage && node app.js

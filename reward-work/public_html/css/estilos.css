@@ -1,0 +1,116 @@
+.menu{
+		margin-left: 5vw;
+		margin-top: -3vw;
+		padding-bottom:1vw;
+	}
+	ul li {
+		display: inline;
+		margin-left: 5vw;
+
+	}
+	ul li a {
+		padding-left: 5vw;
+		font-family: "arial", serif;
+		font-size: 1.2vw;
+		margin-top: -2vw;
+		color: 	black;
+		font-weight: bold;
+	}
+	
+
+	ul li a:hover {
+		color: 	#0000FF;
+		font-weight: bold;
+	}
+	
+	.logo {
+		margin-left: 2vw;
+		margin-top: 1vw;
+	}
+	
+	p{
+		color: 	#778899;
+		text-align: justify;
+	}
+	
+	.texto{
+		weight: 6vw;
+		height: 6vw;
+	}
+	
+	footer{
+		font-size: 1vw;
+		text-align: center;
+		 }
+	.carousel{
+
+		margin-top: 20px;
+	}
+	.carousel .item img{
+		margin: 0 auto; 
+	}
+	.bs-example{
+		margin: 20px;
+	}
+        
+   /* FORMULARIO */
+
+input[type=text], input[type=password], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+.borrar {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #A9BCF5;
+}
+
+
+.container {
+    padding: 15px;
+    border-radius: 10%;
+    margin-bottom: 5px;
+    
+    
+}
+
+
+span.psw {
+    float: right;
+    padding-top: 10px;
+}
+
+
+
+.botones{
+    border: 3px solid #f1f1f1;
+    width: 30%;
+    border: 2px solid #ccc;
+    border-radius: 5%;
+
+}
+
+footer p{
+    font-size: 12px;
+    text-align: center;
+}

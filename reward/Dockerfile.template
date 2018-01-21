@@ -1,0 +1,42 @@
+@include("preamble")
+FROM ${BASE_IMAGE}:${PARENT_IMAGE_TAG}
+@include("maintainer")
+
+@include("addon-toggles")
+
+ENV DOBACKUP="true" \
+    GOPATH="${SERVICE_USER_HOME}"
+
+@include("service_user")
+@include("nodejs")
+@include("npm")
+@include("git")
+@include("service")
+@include("ganache")
+@include("truffle")
+
+RUN echo "yes"
+
+RUN ${APTGET_INSTALL} -y node-gyp && \
+    ${APTGET_CLEANUP} && \
+    cd /opt && \
+    git clone https://github.com/hackatrips2018-team13/cleanscore-api.git work && \
+    rm -rf certify && \
+    mv work certify && \
+    cd /opt/certify && \
+    npm install && \
+    truffle compile && \
+    cd ConsultancyPage && \
+    npm install && \
+    mkdir /etc/service/ganache && \
+    chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api
+
+COPY service-ganache /etc/service/ganache/run
+
+RUN chmod +x /etc/service/ganache/run
+
+EXPOSE 8080
+
+@include("copy-metadata")
+@include("symlinks")
+@include("instructions")
