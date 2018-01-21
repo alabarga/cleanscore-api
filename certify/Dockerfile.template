@@ -19,16 +19,14 @@ RUN echo "yes"
 
 RUN ${APTGET_INSTALL} -y node-gyp && \
     ${APTGET_CLEANUP} && \
-    mkdir -p /etc/${IMAGE} && \
-    ln -s /backup/${IMAGE}/log /var/log/${IMAGE} && \
     cd /opt && \
     git clone https://github.com/hackatrips2018-team13/cleanscore-api.git work && \
-    rm -rf cleanscore-api && \
-    mv work cleanscore-api && \
-    cd cleanscore-api && \
+    rm -rf certify && \
+    mv work certify && \
+    cd /opt/certify && \
     npm install && \
     truffle compile && \
-    cd rest && \
+    cd ConsultancyPage && \
     npm install && \
     mkdir /etc/service/ganache && \
     chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/cleanscore-api
@@ -37,7 +35,7 @@ COPY service-ganache /etc/service/ganache/run
 
 RUN chmod +x /etc/service/ganache/run
 
-EXPOSE 3000
+EXPOSE 8080
 
 @include("copy-metadata")
 @include("symlinks")

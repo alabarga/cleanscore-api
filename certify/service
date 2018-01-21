@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /opt/cleanscore-api
-truffle migrate && cd rest && node app.js
+cd /opt/certify
+truffle migrate && cd ConsultancyPage && node app.js
